@@ -1,0 +1,126 @@
+imports:
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Processing.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Base.yaml" }
+  - { resource: "EXT:rte_ckeditor/Configuration/RTE/Editor/Plugins.yaml" }
+
+editor:
+
+
+  config:
+    contentsCss: "EXT:t3sbootstrap/Resources/Public/Styles/rte.css"
+    stylesSet:
+
+      # Blockstile
+      - { name: "Einführungstext", element: "p", attributes: { 'class': 'lead' } }
+      - { name: "Kleiner Text", element: "p", attributes: { 'class': 'small' } }
+      - { name: "Text ohne Umbruch", element: "p", attributes: { 'class': 'text-nowrap' } }
+
+      - { name: "Kleingeschriebener Text", element: "p", attributes: { 'class': 'text-lowercase' } }
+      - { name: "Großgeschriebener Text", element: "p", attributes: { 'class': 'text-uppercase' } }
+      - { name: "Am Wortanfang großgeschriebener Text", element: "p", attributes: { 'class': 'text-capitalize' } }
+
+      - { name: "Info", element: "p", attributes: { 'class': 'text-info' } }
+      - { name: "Ausgegraut", element: "p", attributes: { 'class': 'text-muted' } }
+      - { name: "Gefahr", element: "p", attributes: { 'class': 'text-danger' } }
+      - { name: "Erfolg", element: "p", attributes: { 'class': 'text-success' } }
+      - { name: "Warnung", element: "p", attributes: { 'class': 'text-warning' } }
+
+      #Tabellen
+      - { name: "Tabelle - Hover", element: "table", attributes: { 'class': 'table table-hover' } }
+      - { name: "Tabelle - Gestreifte Zeilen", element: "table", attributes: { 'class': 'table table-striped' } }
+      - { name: "Tabelle mit Rahmen", element: "table", attributes: { 'class': 'table table-bordered' } }
+      - { name: "Tabelle Komprimierte", element: "table", attributes: { 'class': 'table table-condensed' } }
+
+      # Tabellen-Zeilen
+      - { name: "Row Active", element: "tr", attributes: { 'class': 'active' } }
+      - { name: "Row Success", element: "tr", attributes: { 'class': 'success' } }
+      - { name: "Row Info", element: "tr", attributes: { 'class': 'info' } }
+      - { name: "Row Warning", element: "tr", attributes: { 'class': 'warning' } }
+      - { name: "Row Danger", element: "tr", attributes: { 'class': 'danger' } }
+
+      # Alerts
+      - { name: "Alert Default", element: "div", attributes: { 'class': 'alert alert-default' } }
+      - { name: "Alert Success", element: "div", attributes: { 'class': 'alert alert-success' } }
+      - { name: "Alert Info", element: "div", attributes: { 'class': 'alert alert-info' } }
+      - { name: "Alert Warning", element: "div", attributes: { 'class': 'alert alert-warning' } }
+      - { name: "Alert Danger", element: "div", attributes: { 'class': 'alert alert-danger' } }
+
+      # Wells
+      - { name: "Well", element: "div", attributes: { 'class': 'well' } }
+      - { name: "Well large", element: "div", attributes: { 'class': 'well well-lg' } }
+      - { name: "Well small", element: "div", attributes: { 'class': 'well well-sm' } }
+
+      # Buttons
+      - { name: "Button Default", element: "a", attributes: { 'class': 'btn btn-default' } }
+      - { name: "Button Primary", element: "a", attributes: { 'class': 'btn btn-primary' } }
+      - { name: "Button Success", element: "a", attributes: { 'class': 'btn btn-success' } }
+      - { name: "Button Info", element: "a", attributes: { 'class': 'btn btn-info' } }
+      - { name: "Button Warning", element: "a", attributes: { 'class': 'btn btn-warning' } }
+      - { name: "Button Danger", element: "a", attributes: { 'class': 'btn btn-danger' } }
+
+      # Badges
+      - { name: "Badge", element: "span", attributes: { 'class': 'badge' } }
+
+      # Labels
+      - { name: "Label Default", element: "span", attributes: { 'class': 'label label-default' } }
+      - { name: "Label Primär", element: "span", attributes: { 'class': 'label label-primary' } }
+      - { name: "Label Erfolg", element: "span", attributes: { 'class': 'label label-success' } }
+      - { name: "Label Info", element: "span", attributes: { 'class': 'label label-info' } }
+      - { name: "Label Warning", element: "span", attributes: { 'class': 'label label-warning' } }
+      - { name: "Label danger", element: "span", attributes: { 'class': 'label label-danger' } }
+
+      # Textstile
+      - { name: "Kleiner Text inline", element: "span", attributes: { 'class': 'small' } }
+      - { name: "Markierter Text", element: "mark" }
+      - { name: "Gelöschter Text", element: "del" }
+      - { name: "Eingefügter Text", element: "ins" }
+      - { name: "Adresse", element: "address" }
+      - { name: "Zitat", element: "blockquote" }
+      - { name: "Zitat rechts ausgerichtet", element: "blockquote" ,attributes: { 'class': 'blockquote-reverse' }}
+
+     # Listen
+      - { name: 'Ohne Gestaltung', element: "ul", attributes: { 'class': 'list-unstyled' } }
+      - { name: 'Inline', element: "ul", attributes: { 'class': 'list-inline' } }
+      - { name: 'Keine UL Bullets', element: "ul", attributes: { 'class': 'no-bullet' } }
+
+
+    toolbarGroups:
+      - { name: clipboard, groups: [clipboard, undo] }
+      - { name: editing,   groups: [find, selection, spellchecker] }
+      - { name: links }
+      - { name: insert }
+      - { name: tools }
+      - { name: table }
+      - { name: tabletools }
+      - { name: document,  groups: [ mode, document, doctools ] }
+      - { name: others }
+      - "/"
+      - { name: basicstyles, groups: [ basicstyles, align, cleanup ] }
+      - { name: paragraph,   groups: [ list, indent, blocks, align, showborders ] }
+      - "/"
+      - { name: styles }
+
+    justifyClasses:
+      - text-left
+      - text-center
+      - text-right
+      - text-justify
+
+    extraPlugins:
+      - justify
+      - find
+      - copyformatting
+
+    removePlugins:
+      - image
+
+    removeButtons:
+      - Anchor
+
+
+# Allow s and u tag
+processing:
+  allowTags:
+    - s
+    - u
+    - iframe

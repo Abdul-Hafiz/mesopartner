@@ -1,0 +1,83 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{gallery.rows}">
+	<f:if condition="{data.imagecols} == 88">
+		<f:then>
+			<f:if condition="{files -> f:count()} == 1">
+				<f:then>
+					<f:render section="gallery-default" arguments="{_all}" />
+				</f:then>
+				<f:else>
+					<f:render section="carousel" arguments="{_all}" />
+				</f:else>
+			</f:if>
+		</f:then>
+		<f:else>
+			<f:render section="gallery-default" arguments="{_all}" />
+		</f:else>
+	</f:if>
+</f:if>
+</html>
+
+
+<f:section name="gallery-default">
+	<f:if condition="{files -> f:count()} == 1">
+		<f:then>
+			<div class="ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}" data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
+				<f:for each="{files}" as="media" iteration="i">
+					<f:render partial="Media/Type" arguments="{_all}" />
+				</f:for>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="row ce-gallery{f:if(condition: data.imageborder, then: ' ce-border')}" data-ce-columns="{gallery.count.columns}" data-ce-images="{gallery.count.files}">
+				<f:for each="{files}" as="media" iteration="i">
+					<div class="col-xs-12 col-sm-{f:cObject(typoscriptObjectPath: 'lib.math', data: '12/{data.imagecols}')}">
+						<f:render partial="Media/Type" arguments="{_all}" />
+					</div>
+					<f:if condition="{gallery.count.rows} > '1'">
+					<f:if condition="{gallery.count.columns} > '1'">
+						<f:if condition="{i.isLast}">
+							<f:else>
+								<f:if condition="{i.cycle}%{gallery.count.columns}">
+									<f:else>
+										<div class="clearfix"></div>
+									</f:else>
+								</f:if>
+							</f:else>
+						</f:if>
+					</f:if>
+					</f:if>
+				</f:for>
+			</div>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="carousel">
+	<div id="carousel-{data.uid}" class="carousel slide center-block" data-ride="carousel"
+	style="max-width: {gallery.width}px; max-height: {gallery.height}px;">
+		<ol class="carousel-indicators">
+			<f:for each="{files}" as="mediaElement" iteration="iterator">
+				<li data-target="#carousel-{data.uid}" data-slide-to="{iterator.index}" class="{f:if(condition:'{iterator.isFirst} == 1',then:'active')}"></li>
+			</f:for>
+		</ol>
+		<div class="carousel-inner" role="listbox">
+			<f:for each="{files}" as="media" iteration="iterator">
+				<div class="item{f:if(condition:'{iterator.isFirst} == 1',then:' active')}">
+					<f:media
+						file="{media}"
+						alt="{media.alternative -> f:format.stripTags()}"
+						title="{media.title -> f:format.stripTags()}"
+						width="{gallery.width}c"
+						height="{gallery.height}c"
+						class="img-responsive carousel-slide"
+					/>
+				</div>
+			</f:for>
+		</div>
+		<a class="left carousel-control" href="#carousel-{data.uid}" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="sr-only">Zurück</span></a>
+		<a class="right carousel-control" href="#carousel-{data.uid}" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span><span class="sr-only">Weiter</span></a>
+	</div>
+</f:section>

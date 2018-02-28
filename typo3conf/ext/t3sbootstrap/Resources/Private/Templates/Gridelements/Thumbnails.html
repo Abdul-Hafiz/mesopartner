@@ -1,0 +1,78 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+<f:render partial="Header" arguments="{settings: settings, data: data, class: '' }" />
+<f:for each="{data.tx_gridelements_view_children}" as="thumbnail" iteration="iterator">
+	<f:if condition="{iterator.isFirst}">
+		<div class="row tr{data.uid}-{iterator.cycle}">
+	</f:if>
+	<f:if condition="{iterator.cycle} % {modulo}">
+		<f:then>
+			<div class="col-sm-6 col-md-{data.flexform_columns}">
+				<f:render section="thumbnail" arguments="{_all}" />
+			</div>
+		</f:then>
+		<f:else>
+			<div class="col-sm-6 col-md-{data.flexform_columns}">
+				<f:render section="thumbnail" arguments="{_all}" />
+			</div>
+			<f:if condition="{iterator.isLast}">
+				<f:else>
+					</div>
+					<div class="row tr{data.uid}-{iterator.cycle}">
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+	<f:if condition="{iterator.isLast}">
+		</div>
+	</f:if>
+</f:for>
+</f:section>
+</html>
+
+<f:section name="thumbnail">
+<div class="thumbnail{f:if(condition: '{thumbnail.tx_t3sbootstrap_animateCss}',then: ' animated')}"
+	 {f:if(condition: '{thumbnail.tx_t3sbootstrap_animateCss}',then: ' data-vp-add-class="{thumbnail.tx_t3sbootstrap_animateCss}"')}
+	 {f:if(condition: '{thumbnail.tx_t3sbootstrap_animateCssRepeat}',then: ' data-vp-repeat="true"')}>
+	<f:for each="{childView}" as="child"  key="uid">
+		<f:if condition="{thumbnail.uid} == {uid}">
+			{child -> f:format.raw()}
+		</f:if>
+	</f:for>
+	<f:if condition="{thumbnail.bodytext}">
+		<f:then>
+			<div class="caption">
+				<f:if condition="{thumbnail.header}">
+					<f:render section="header" arguments="{_all}" />
+				</f:if>
+				{thumbnail.bodytext -> f:format.html()}
+			</div>
+		</f:then>
+		<f:else>
+			<f:if condition="{thumbnail.header}">
+				<div class="caption">
+					<f:render section="header" arguments="{_all}" />
+				</div>
+			</f:if>
+		</f:else>
+	</f:if>
+</div>
+</f:section>
+
+<f:section name="header">
+<f:if condition="{thumbnail.header_layout} != 100">
+	<f:if condition="{thumbnail.header}">
+		<f:render partial="Header/Header" arguments="{
+			header: thumbnail.header,
+			layout: thumbnail.header_layout,
+			link: thumbnail.header_link,
+			fontawesome: thumbnail.tx_t3sbootstrap_fontawesome_icon,
+			subheader: thumbnail.subheader,
+			header_position: thumbnail.tx_t3sbootstrap_header_position,
+			default: settings.defaultHeaderType}" />
+		<f:render partial="Header/Date" arguments="{_all}" />
+	</f:if>
+</f:if>
+</f:section>
+

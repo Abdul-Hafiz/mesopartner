@@ -1,0 +1,50 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{assets.0}">
+	<f:if condition="{assets.0.type} == 2">
+		<f:render section="imageType" arguments="{_all}" />
+	</f:if>
+	<f:if condition="{assets.0.type} == 4">
+		<f:render section="videoType" arguments="{_all}" />
+	</f:if>
+</f:if>
+</html>
+
+<f:section name="imageType">
+	<f:if condition="{assets.0.link}">
+		<f:then>
+			<f:link.typolink parameter="{assets.0.link}">
+				<f:render section="media" arguments="{_all}" />
+			</f:link.typolink>
+		</f:then>
+		<f:else>
+			<f:if condition="{data.image_zoom}">
+				<f:then>
+					<ce:link.clickEnlarge image="{assets.0}" configuration="{settings.media.popup}">
+						<f:render section="media" arguments="{_all}" />
+					</ce:link.clickEnlarge>
+				</f:then>
+				<f:else>
+					<f:render section="media" arguments="{_all}" />
+				</f:else>
+			</f:if>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="videoType">
+	<div class="embed-responsive embed-responsive-{settings.video.ratio}">
+		<f:render section="media" arguments="{_all}" />
+	</div>
+</f:section>
+
+<f:section name="media">
+	<f:media
+		file="{assets.0}"
+		alt="{assets.0.alternative}"
+		title="{assets.0.title}"
+		width="{f:if(condition: '{assets.0.type} == 2',then: '{f:if(condition: \'{data.parentgrid_flexform_width}\',then: \'{data.parentgrid_flexform_width}\', else: \'350\')}')}"
+		height="{f:if(condition: '{assets.0.type} == 2',then: '{f:if(condition: \'{data.parentgrid_flexform_height}\',then: \'{data.parentgrid_flexform_height}c\')}')}"
+		class="{f:if(condition: '{assets.0.type} == 2',then: 'img-responsive', else: 'embed-responsive-item')}{f:if(condition: '{assets.0.type} == 2',then: '{f:if(condition: \'{thumbnail.tx_t3sbootstrap_imagestyle}\',then: \' {thumbnail.tx_t3sbootstrap_imagestyle}\')}')}"
+	/>
+</f:section>

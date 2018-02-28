@@ -1,0 +1,6 @@
+<f:if condition="{data.tx_mask_socialmedia}">
+	<f:for each="{data.tx_mask_socialmedia}" as="file">
+  		<f:link.typolink parameter="{file.link}"><f:image image="{file}" /></f:link.typolink>
+  	</f:for>
+</f:if>
+

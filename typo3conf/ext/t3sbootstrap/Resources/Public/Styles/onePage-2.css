@@ -1,0 +1,130 @@
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	font-size: 16px;
+	width: 100%;
+	height: 100%;
+}
+
+.top-background-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	background-attachment: fixed;
+	background-attachment:scroll;
+}
+
+
+/* Navbar
+***********************
+*/
+.backend-layout-t3sbootstrap_10 .navbar .navbar-nav > li {
+	float: none;
+}
+
+
+	.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a {
+	    background-image: none;
+		box-shadow: none;
+		border-top: 1px solid red;	
+		border-bottom: 1px solid red;	
+	}	
+	.navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	    color: red;
+	    background-color: transparent;
+	}
+	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	    color: red;
+	    background-color: transparent;
+		border-top: 1px solid red;	
+		border-bottom: 1px solid red;	
+	}
+	
+
+/* Section hader & anchor
+***********************
+*/
+h1.section-header,
+h2.section-header {
+	font-size: 42px;
+	max-width:900px;
+	text-align:center;
+	margin:0 auto;
+	margin-top: 4rem;
+	margin-bottom: 6rem;
+	letter-spacing: 1px;
+}
+h1.section-header small:before,
+h2.section-header small:before {
+	display: block;
+	content: '';
+	background: silver;
+	height: 1px;
+	margin-bottom: 10px;
+}
+h1.section-header small,
+h2.section-header small {
+	font-size: 16px;
+	display: block;
+}
+
+.anchor{
+  display: block;
+  height: 50px; /*same height as header*/
+  margin-top: -50px; /*same height as header*/
+  visibility: hidden;
+}
+
+
+/* Kleine Geräte (Tablets, 768px und breiter) */
+@media(min-width:768px) {
+
+	.backend-layout-t3sbootstrap_10 .navbar .navbar-nav > li > a {
+		 font-size: 18px;
+	}
+
+	.top-background-image {
+		background-attachment: fixed;
+	}
+
+	/* Navbar
+	***********************
+	*/	
+	.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a {
+
+		border-top: 3px solid red;	
+	    border-bottom: none;
+	}	
+
+	.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+
+	    border-top: 3px solid red;
+	    border-bottom: none;
+	}
+
+
+}
+
+/* Mittlere Geräte (Desktop-PCs, 992px und breiter) */
+@media (min-width: 992px) {
+
+	.navbar .navbar-nav > li > a {
+		 font-size: 21px;
+	}
+
+}
+
+/* Große Geräte (Desktop-PCs, 1200px und breiter) */
+@media (min-width: 1200px) {
+
+	.navbar .navbar-nav > li > a {
+		 font-size: 24px;
+	}
+
+}
+
+
+

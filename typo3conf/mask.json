@@ -1,0 +1,367 @@
+{
+    "tt_content": {
+        "elements": {
+            "slider": {
+                "label": "Slider",
+                "key": "slider",
+                "shortLabel": "Slider",
+                "description": "Slider",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "tx_mask_slider",
+                    "tx_mask_stickyicons",
+                    "tx_mask_slidercircletext",
+                    "tx_mask_tagline",
+                    "tx_mask_taglinelinktext",
+                    "tx_mask_taglinelink"
+                ],
+                "labels": [
+                    "Slider",
+                    "Sticky Icons",
+                    "Slider Circle Text",
+                    "Tagline",
+                    "Tagline Readmore text",
+                    "Tagline Readmore Link"
+                ],
+                "options": {
+                    "2": "rte"
+                }
+            },
+            "socialmedia": {
+                "label": "Social Media",
+                "key": "socialmedia",
+                "shortLabel": "Social Media",
+                "description": "Social Media",
+                "icon": "",
+                "color": "#000000",
+                "labels": [
+                    "Social Media"
+                ],
+                "columns": [
+                    "tx_mask_socialmedia"
+                ]
+            },
+            "teaser_section": {
+                "label": "Teaser Section",
+                "key": "teaser_section",
+                "shortLabel": "Teaser Section",
+                "description": "Teaser Section",
+                "icon": "",
+                "color": "#000000",
+                "columns": [
+                    "tx_mask_teasers"
+                ],
+                "labels": [
+                    "Teasers"
+                ],
+                "options": {
+                    "3": "rte"
+                }
+            }
+        },
+        "sql": {
+            "tx_mask_slider": {
+                "tt_content": {
+                    "tx_mask_slider": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_stickyicons": {
+                "tt_content": {
+                    "tx_mask_stickyicons": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_slidercircletext": {
+                "tt_content": {
+                    "tx_mask_slidercircletext": "text"
+                }
+            },
+            "tx_mask_tagline": {
+                "tt_content": {
+                    "tx_mask_tagline": "tinytext"
+                }
+            },
+            "tx_mask_taglinelinktext": {
+                "tt_content": {
+                    "tx_mask_taglinelinktext": "tinytext"
+                }
+            },
+            "tx_mask_taglinelink": {
+                "tt_content": {
+                    "tx_mask_taglinelink": "tinytext"
+                }
+            },
+            "tx_mask_teasers": {
+                "tt_content": {
+                    "tx_mask_teasers": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_socialmedia": {
+                "tt_content": {
+                    "tx_mask_socialmedia": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_slider": {
+                "exclude": "1",
+                "options": "file",
+                "config": {
+                    "appearance": {
+                        "collapseAll": "1"
+                    },
+                    "behaviour": {
+                        "localizationMode": "select"
+                    },
+                    "minitems": "",
+                    "maxitems": "",
+                    "filter": [
+                        {
+                            "parameters": {
+                                "allowedFileExtensions": ""
+                            }
+                        }
+                    ]
+                },
+                "key": "slider"
+            },
+            "tx_mask_stickyicons": {
+                "exclude": "1",
+                "options": "file",
+                "config": {
+                    "appearance": {
+                        "collapseAll": "1"
+                    },
+                    "behaviour": {
+                        "localizationMode": "select"
+                    },
+                    "minitems": "",
+                    "maxitems": "",
+                    "filter": [
+                        {
+                            "parameters": {
+                                "allowedFileExtensions": ""
+                            }
+                        }
+                    ]
+                },
+                "key": "stickyicons"
+            },
+            "tx_mask_slidercircletext": {
+                "config": {
+                    "type": "text",
+                    "eval": "",
+                    "cols": "5",
+                    "rows": "20",
+                    "default": "",
+                    "placeholder": "",
+                    "max": ""
+                },
+                "exclude": "1",
+                "defaultExtras": "richtext[]:rte_transform[mode=ts_css]",
+                "key": "slidercircletext"
+            },
+            "tx_mask_tagline": {
+                "config": {
+                    "type": "input",
+                    "eval": "",
+                    "default": "",
+                    "placeholder": "",
+                    "size": "48",
+                    "max": "",
+                    "is_in": ""
+                },
+                "exclude": "1",
+                "key": "tagline"
+            },
+            "tx_mask_taglinelinktext": {
+                "config": {
+                    "type": "input",
+                    "eval": "",
+                    "default": "",
+                    "placeholder": "",
+                    "size": "",
+                    "max": "",
+                    "is_in": ""
+                },
+                "exclude": "1",
+                "key": "taglinelinktext"
+            },
+            "tx_mask_taglinelink": {
+                "config": {
+                    "type": "input",
+                    "wizards": {
+                        "_PADDING": "2",
+                        "link": {
+                            "type": "popup",
+                            "title": "Link",
+                            "icon": "EXT:backend\/Resources\/Public\/Images\/FormFieldWizard\/wizard_link.gif",
+                            "module": {
+                                "name": "wizard_link",
+                                "urlParameters": {
+                                    "mode": "wizard"
+                                }
+                            },
+                            "JSopenParams": "height=300,width=500,status=0,menubar=0,scrollbars=1",
+                            "params": {
+                                "blindLinkOptions": "",
+                                "allowedExtensions": ""
+                            }
+                        }
+                    },
+                    "eval": "",
+                    "default": "",
+                    "placeholder": "",
+                    "size": ""
+                },
+                "exclude": "1",
+                "key": "taglinelink"
+            },
+            "tx_mask_teasers": {
+                "config": {
+                    "type": "inline",
+                    "foreign_table": "--inlinetable--",
+                    "foreign_field": "parentid",
+                    "foreign_table_field": "parenttable",
+                    "foreign_sortby": "sorting",
+                    "appearance": {
+                        "enabledControls": {
+                            "dragdrop": "1"
+                        },
+                        "newRecordLinkTitle": "",
+                        "levelLinksPosition": "top"
+                    },
+                    "minitems": "",
+                    "maxitems": "",
+                    "behaviour": {
+                        "localizationMode": "select"
+                    }
+                },
+                "exclude": "1",
+                "inlineLabel": "",
+                "inlineIcon": "",
+                "key": "teasers"
+            },
+            "tx_mask_socialmedia": {
+                "exclude": "1",
+                "options": "file",
+                "config": {
+                    "appearance": {
+                        "collapseAll": "1"
+                    },
+                    "behaviour": {
+                        "localizationMode": "select"
+                    },
+                    "minitems": "",
+                    "maxitems": "",
+                    "filter": [
+                        {
+                            "parameters": {
+                                "allowedFileExtensions": ""
+                            }
+                        }
+                    ]
+                },
+                "key": "socialmedia"
+            }
+        }
+    },
+    "sys_file_reference": {
+        "sql": {
+            "tx_mask_slider": {
+                "sys_file_reference": {
+                    "tx_mask_slider": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_stickyicons": {
+                "sys_file_reference": {
+                    "tx_mask_stickyicons": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_teaserimage": {
+                "sys_file_reference": {
+                    "tx_mask_teaserimage": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_socialmedia": {
+                "sys_file_reference": {
+                    "tx_mask_socialmedia": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            }
+        }
+    },
+    "tx_mask_teasers": {
+        "sql": {
+            "tx_mask_department": {
+                "tx_mask_teasers": {
+                    "tx_mask_department": "tinytext"
+                }
+            },
+            "tx_mask_teaserimage": {
+                "tx_mask_teasers": {
+                    "tx_mask_teaserimage": "int(11) unsigned DEFAULT '0' NOT NULL"
+                }
+            },
+            "tx_mask_text": {
+                "tx_mask_teasers": {
+                    "tx_mask_text": "text"
+                }
+            }
+        },
+        "tca": {
+            "tx_mask_department": {
+                "config": {
+                    "type": "input",
+                    "eval": "",
+                    "default": "",
+                    "placeholder": "",
+                    "size": "",
+                    "max": "",
+                    "is_in": ""
+                },
+                "exclude": "1",
+                "inlineParent": "tx_mask_teasers",
+                "label": "Department",
+                "key": "department"
+            },
+            "tx_mask_teaserimage": {
+                "exclude": "1",
+                "options": "file",
+                "config": {
+                    "behaviour": {
+                        "localizationMode": "select"
+                    },
+                    "minitems": "",
+                    "maxitems": "1",
+                    "filter": [
+                        {
+                            "parameters": {
+                                "allowedFileExtensions": ""
+                            }
+                        }
+                    ]
+                },
+                "inlineParent": "tx_mask_teasers",
+                "label": "Teaser Image",
+                "key": "teaserimage"
+            },
+            "tx_mask_text": {
+                "config": {
+                    "type": "text",
+                    "eval": "",
+                    "cols": "5",
+                    "rows": "20",
+                    "default": "",
+                    "placeholder": "",
+                    "max": ""
+                },
+                "exclude": "1",
+                "defaultExtras": "richtext[]:rte_transform[mode=ts_css]",
+                "inlineParent": "tx_mask_teasers",
+                "label": "Text",
+                "rte": "1",
+                "key": "text"
+            }
+        }
+    }
+}

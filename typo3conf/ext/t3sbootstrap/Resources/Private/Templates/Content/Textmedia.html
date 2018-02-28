@@ -1,0 +1,137 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+<f:if condition="{files}">
+	<f:then>
+		<f:if condition="{data.bodytext}">
+			<f:then>
+				<f:if condition="{gallery.position.noWrap}">
+					<f:then>
+						<f:render section="noWrap" arguments="{_all}" />
+					</f:then>
+					<f:else>
+						<f:if condition="{data.imageorient} > 65">
+							<f:then>
+								<f:render section="variant" arguments="{_all}" />
+							</f:then>
+							<f:else>
+								<f:render partial="Header" arguments="{settings : settings, data : data, class : 'textmedia-header' }" />
+								<f:if condition="{gallery.position.vertical} == 'below'">
+									<div class="media-position-below">
+										{data.bodytext -> f:format.html()}
+									</div>
+									<f:render section="aboveBelow" arguments="{_all}" />
+									<div class="clearfix"></div>
+								</f:if>
+								<f:if condition="{gallery.position.vertical} == 'above'">
+									<f:render section="aboveBelow" arguments="{_all}" />
+									<div class="clearfix"></div>
+									<div class="media-position-above">
+										{data.bodytext -> f:format.html()}
+									</div>
+								</f:if>
+								<f:if condition="{gallery.position.vertical} == 'intext'">
+									<div class="clearfix">
+										<div class="intext {gallery.position.horizontal}" data-float="{gallery.position.horizontal}">
+											<f:render partial="Media/Gallery" arguments="{_all}" />
+										</div>
+										<div class="intext-text">
+											{data.bodytext -> f:format.html()}
+										</div>
+									</div>
+								</f:if>
+							</f:else>
+						</f:if>
+					</f:else>
+				</f:if>
+			</f:then>
+			<f:else>
+				<f:render partial="Header" arguments="{settings : settings, data : data, class : 'textmedia-header' }" />
+				<div class="noWrap {gallery.position.horizontal}" data-float="{gallery.position.horizontal}">
+					<f:render partial="Media/Gallery" arguments="{_all}" />
+				</div>
+			</f:else>
+		</f:if>
+	</f:then>
+	<f:else>
+		<f:render partial="Header" arguments="{settings : settings, data : data, class : 'textmedia-header' }" />
+		<f:if condition="{data.bodytext}">
+			<div class="bodytext">
+				{data.bodytext -> f:format.html()}
+			</div>
+		</f:if>
+	</f:else>
+</f:if>
+</f:section>
+</html>
+
+
+<f:section name="noWrap">
+	<f:if condition="{gallery.position.horizontal} == 'pull-right'">
+		<f:then>
+			<div class="row noWrap media-position-right">
+				<div class="col-xs-12 col-sm-6 col-sm-push-6" data-float="pull-right">
+					<f:render partial="Media/Gallery" arguments="{_all}" />
+				</div>
+				<div class="col-xs-12 col-sm-6 col-sm-pull-6">
+					<f:render partial="Header" arguments="{settings : settings, data : data, class : 'textmedia-header' }" />
+					{data.bodytext -> f:format.html()}
+				</div>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="row noWrap media-position-left">
+				<div class="col-xs-12 col-sm-6" data-float="pull-left">
+					<f:render partial="Media/Gallery" arguments="{_all}" />
+				</div>
+				<div class="col-xs-12 col-sm-6">
+					<f:render partial="Header" arguments="{settings : settings, data : data, class : 'textmedia-header' }" />
+					{data.bodytext -> f:format.html()}
+				</div>
+			</div>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="variant">
+	<f:if condition="{data.imageorient} == 66">
+		<f:then>
+			<div class="row noWrap media-position-right">
+				<div class="col-xs-12 col-sm-3 col-sm-push-9" data-float="pull-right">
+					<f:render partial="Media/Gallery" arguments="{_all}" />
+				</div>
+					<div class="col-xs-12 col-sm-9 col-sm-pull-3">
+					<f:render partial="Header" arguments="{settings : settings, data : data, class : 'textmedia-header' }" />
+					{data.bodytext -> f:format.html()}
+
+				</div>
+			</div>
+		</f:then>
+		<f:else>
+			<div class="row noWrap media-position-left">
+				<div class="col-xs-12 col-sm-3 col-sm-push-9" data-float="pull-left">
+					<f:render partial="Media/Gallery" arguments="{_all}" />
+				</div>
+					<div class="col-xs-12 col-sm-9 col-sm-pull-3">
+					<f:render partial="Header" arguments="{settings : settings, data : data, class : 'textmedia-header' }" />
+					{data.bodytext -> f:format.html()}
+				</div>
+			</div>
+		</f:else>
+	</f:if>
+</f:section>
+
+<f:section name="aboveBelow">
+	<f:if condition="{gallery.position.horizontal} == 'center-block'">
+		<f:then>
+			<div class="noWrap" data-float="center-block">
+				<f:render partial="Media/Gallery" arguments="{_all}" />
+			</div>
+		</f:then>
+		<f:else>
+			<div class="noWrap" data-float="{gallery.position.horizontal}">
+				<f:render partial="Media/Gallery" arguments="{_all}" />
+			</div>
+		</f:else>
+	</f:if>
+</f:section>

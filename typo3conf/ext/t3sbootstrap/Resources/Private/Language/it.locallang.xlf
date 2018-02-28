@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="it" datatype="plaintext" original="messages" date="2016-08-08T16:59:16Z" product-name="t3sbootstrap">
+		<header/>
+		<body>
+
+			<trans-unit id="search-placeholder">
+				<target>ricerca</target>
+			</trans-unit>
+
+			<trans-unit id="moreButton">
+				<target>piú</target>
+			</trans-unit>
+
+			<trans-unit id="login">
+				<target>Login</target>
+			</trans-unit>
+
+			<trans-unit id="logout">
+				<target>Logout</target>
+			</trans-unit>
+
+			<trans-unit id="read-more">
+				<target>leggi di piú</target>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

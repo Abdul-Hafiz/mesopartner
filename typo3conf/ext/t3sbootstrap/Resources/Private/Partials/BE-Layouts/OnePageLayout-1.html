@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment> BE-Layout: pagets__t3sbootstrap_10 </f:comment>
+<nav class="navbar navbar-default navbar-fixed-top Fixed">
+    <div class="{f:if(condition: '{settings.styles.container-fluid}',then: 'container-fluid', else: 'container')}">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                <i class="fa fa-bars"></i>
+            </button>
+			<f:cObject typoscriptObjectPath="lib.navbar-brand" />
+        </div>
+        <div id="bs-navbar-collapse-1" class="collapse navbar-collapse navbar-main-collapse">
+            <ul class="nav navbar-nav navbar-left pull-right">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#"></a>
+                </li>
+				<f:cObject typoscriptObjectPath="lib.sectionMenu" />
+				<f:if condition="{settings.extensions.login.enable}">
+					<li>
+					<f:cObject typoscriptObjectPath="lib.loginLogout" />
+					</li>
+				</f:if>
+				<f:if condition="{settings.navigation.navbar_lang.enable}">
+					<f:cObject typoscriptObjectPath="lib.navigation.languageswitch" />
+				</f:if>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="page-content">
+	<f:cObject typoscriptObjectPath="lib.content.onePage" />
+</div>
+</html>

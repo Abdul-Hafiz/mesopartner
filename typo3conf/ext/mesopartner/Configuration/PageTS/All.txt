@@ -1,0 +1,7 @@
+#
+# PageTS for mesopartner
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mesopartner/Configuration/PageTS/RTE.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mesopartner/Configuration/PageTS/TCEFORM.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mesopartner/Configuration/PageTS/TCEMAIN.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:mesopartner/Configuration/PageTS/Mod/WebLayout/BackendLayouts.txt">

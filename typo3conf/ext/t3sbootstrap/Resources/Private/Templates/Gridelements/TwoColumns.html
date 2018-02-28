@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+	<f:render partial="Header" arguments="{settings: settings, data: data, class: '' }" />
+	<div class="row{f:if(condition:'{data.flexform_equalHeight}',then:' row-eq-height')}">
+		<div class="col-xs-{data.flexform_xs_one} col-sm-{data.flexform_sm_one} col-md-{data.flexform_md_one} col-lg-{data.flexform_lg_one}{f:if(condition:'{data.flexform_xclass_one}',then:' {data.flexform_xclass_one}')}">			
+			<f:if condition="{data.flexform_bg_one}">
+				<div class="box" style="background-color: {data.flexform_bg_one};">
+			</f:if>
+				{data.tx_gridelements_view_column_0 -> f:format.raw()}
+			<f:if condition="{data.flexform_bg_one}">
+				</div>
+			</f:if>
+		</div>
+		<div class="col-xs-{data.flexform_xs_two} col-sm-{data.flexform_sm_two} col-md-{data.flexform_md_two} col-lg-{data.flexform_lg_two}{f:if(condition:'{data.flexform_xclass_two}',then:' {data.flexform_xclass_two}')}">
+			<f:if condition="{data.flexform_bg_two}">
+				<div class="box" style="background-color: {data.flexform_bg_two};">
+			</f:if>
+				{data.tx_gridelements_view_column_1 -> f:format.raw()}		
+			<f:if condition="{data.flexform_bg_two}">
+				</div>
+			</f:if>
+		</div>
+	</div>
+</f:section>
+</html>

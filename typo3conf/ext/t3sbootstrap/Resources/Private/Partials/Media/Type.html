@@ -1,0 +1,14 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<f:if condition="{media.type} == 2">
+		<f:render partial="Media/Type/Image" arguments="{media: media, gallery: gallery, data: data, i: i}" />
+	</f:if>
+	<f:if condition="{media.type} == 3">
+		<f:render partial="Media/Type/Audio" arguments="{media: media, gallery: gallery, data: data, i: i}" />
+	</f:if>
+	<f:if condition="{media.type} == 4">
+		<f:render partial="Media/Type/Video" arguments="{media: media, gallery: gallery, data: data, i: i}" />
+	</f:if>
+	<f:if condition="{media.type} == 5">
+		<f:render partial="Media/Type/Image" arguments="{media: media, gallery: gallery, data: data, i: i}" />
+	</f:if>
+</html>

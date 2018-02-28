@@ -1,0 +1,22 @@
+<f:if condition="{data.tx_mask_teasers}">
+	<section class="teaser-section">
+        <div class="container">
+            <div class="row">
+            	<f:for each="{data.tx_mask_teasers}" as="data_item">
+	                <div class="col-md-4">
+	                    <div class="teaser-block">
+	                        <h2>{data_item.tx_mask_department}</h2>
+	                        <f:for each="{data_item.tx_mask_teaserimage}" as="file">
+							  	<figure style="background-image: url({f:uri.image(image:file)})">
+		                            <div class="teaser-hover">
+		                                <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data_item.tx_mask_text}</f:format.html>
+		                            </div>
+		                        </figure>
+							</f:for>
+	                    </div>
+	                </div>
+	            </f:for>
+            </div>
+        </div>
+    </section>
+</f:if>

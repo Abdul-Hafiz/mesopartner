@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:layout name="Default" />
+<f:section name="Main">
+	<f:render partial="Header" arguments="{settings : settings, data : data, class : '' }" />
+	<f:render section="Menu" arguments="{menu: menu}" />
+</f:section>
+<f:section name="Menu">
+	<f:if condition="{menu}">
+		<ul class="tree">
+			<f:for each="{menu}" as="page">
+				<li>
+					<a href="{page.link}" target="{page.target}" title="{page.title}">
+						<f:if condition="{page.nav_title}">
+							<f:then>
+								<span>{page.nav_title}</span>
+							</f:then>
+							<f:else>
+								<span>{page.title}</span>
+							</f:else>
+						</f:if>
+					</a>
+					<f:render section="Menu" arguments="{menu: page.children}" />
+				</li>
+			</f:for>
+		</ul>
+	</f:if>
+</f:section>
+</html>

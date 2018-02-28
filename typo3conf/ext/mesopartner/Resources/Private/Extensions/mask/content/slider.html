@@ -1,0 +1,28 @@
+<section class="slider-section">
+    <div class="slider-init owl-carousel">
+		<f:if condition="{data.tx_mask_slider}">
+        	<f:for each="{data.tx_mask_slider}" as="file">
+	            <div class="slide">
+	                <div class="slide-bg" style="background-image:url({f:uri.image(image:file)})"></div>
+	            </div>
+        	</f:for>
+		</f:if>
+    </div>
+    <f:if condition="{data.tx_mask_stickyicons}">
+	    <div class="sticky-nav hidden-xs hidden-sm">
+	    	<f:for each="{data.tx_mask_stickyicons}" as="sticky">
+	        	<f:link.typolink parameter="{sticky.link}"><f:image image="{sticky}" alt="" /></f:link.typolink>
+	    	</f:for>
+	    </div>
+    </f:if>
+</section>
+<section class="tagline-section">
+    <div class="container">
+        <div class="slider-content">
+            <f:format.html>{data.tx_mask_slidercircletext}</f:format.html>
+        </div>
+        <div class="tagline-block">
+            <h2>{data.tx_mask_tagline}</h2><f:link.typolink parameter="{data.tx_mask_taglinelink}">{data.tx_mask_taglinelinktext}</f:link.typolink>
+        </div>
+    </div>
+</section>

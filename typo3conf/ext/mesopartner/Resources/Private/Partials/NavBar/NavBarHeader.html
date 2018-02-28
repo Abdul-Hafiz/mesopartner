@@ -1,0 +1,44 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+	<div class="menu-trigger">
+        <div class="bars"></div>
+        <div class="bars"></div>
+        <div class="bars"></div>
+    </div>
+
+
+    <div class="top-nav">        
+        <ul>
+           	<f:cObject typoscriptObjectPath="lib.navigation.top"/>
+            <f:cObject typoscriptObjectPath="lib.navigation.languageswitch"/>
+            <li class="social">
+               <f:cObject typoscriptObjectPath="lib.socialmedialTop"/>
+            </li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="search this Site">
+            <input type="submit" value="">
+        </div>
+    </div>
+
+    <div class="navigation">
+        <nav>
+            <ul>
+        		<f:cObject typoscriptObjectPath="lib.navigation.main" />
+            </ul>
+            <div class="top-nav">
+                <ul>
+                    <f:cObject typoscriptObjectPath="lib.navigation.top" />
+                    <f:cObject typoscriptObjectPath="lib.navigation.languageswitch"/>
+                    <li class="social">
+                       <f:cObject typoscriptObjectPath="lib.socialmedialTop"/>
+                    </li>
+                </ul>
+                <div class="search-box">
+                    <input type="text" placeholder="search this Site">
+                    <input type="submit" value="">
+                </div>
+            </div>
+        </nav>
+    </div>
+
+</html>

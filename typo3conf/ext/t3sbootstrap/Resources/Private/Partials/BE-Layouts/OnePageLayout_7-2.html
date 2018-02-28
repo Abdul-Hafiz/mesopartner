@@ -1,0 +1,51 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	xmlns:ce="http://typo3.org/ns/TYPO3/CMS/FluidStyledContent/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:comment> BE-Layout: pagets__t3sbootstrap_10</f:comment>
+<section class="background-image top-background-image" style="background-image: url({f:cObject(typoscriptObjectPath: 'lib.headerImage')});">
+	<div class="container">
+		<f:cObject typoscriptObjectPath="lib.content.header" />
+		<f:cObject typoscriptObjectPath="lib.content.top" />
+	</div>
+</section>
+<nav id="main-navbar" class="navbar navbar-default onepage">	
+    <div class="{f:if(condition: '{settings.styles.container-fluid}',then: 'container-fluid', else: 'container')}">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1" aria-expanded="false">
+				<span class="sr-only">Navigation ein-/ausblenden</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand visible-xs-inline page-scroll" href="#"><i class="fa fa-play-circle"></i> {settings.company}</a>
+        </div>
+        <div id="bs-navbar-collapse-1" class="collapse navbar-collapse main-navbar-collapse">
+            <ul class="nav navbar-nav nav-justified">
+                <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                <li class="hidden">
+                    <a href="#"></a>
+                </li>
+				<ce:menu.section pageUid="{data.uid}" as="contentElements" type="header">
+					<f:if condition="{contentElements}">
+						<f:for each="{contentElements}" as="contentElement">
+							<li>
+								<a class="page-scroll" href="#c{contentElement.uid}">{contentElement.header}</a>
+							</li>
+						</f:for>
+					</f:if>
+				</ce:menu.section>
+				<f:if condition="{settings.extensions.login.enable}">
+					<li>
+						<f:cObject typoscriptObjectPath="lib.loginLogout" />
+					</li>
+				</f:if>
+				<f:if condition="{settings.navigation.navbar_lang.enable}">
+					<f:cObject typoscriptObjectPath="lib.navigation.languageswitch" />
+				</f:if>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="page-content">
+	<f:cObject typoscriptObjectPath="lib.content.onePage" />
+</div>
+</html>

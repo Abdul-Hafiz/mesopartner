@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="it" datatype="plaintext" original="messages" date="2016-08-08T16:59:16Z" product-name="t3sbootstrap">
+		<header/>
+		<body>
+
+			<trans-unit id="pages.tx_t3sbootstrap_glyphicon">
+				<target>Bootstrap Glyphicon:</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_t3sbootstrap_no_glyphicon">
+				<target>Nessun Glyphicon</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_t3sbootstrap_panel_state">
+				<target>Pannello alternative contestuali:</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_t3sbootstrap_media_position">
+				<target>Posizione immagine:</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_t3sbootstrap_media_position_left">
+				<target>Sinistra</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_t3sbootstrap_media_position_right">
+				<target>Destra</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_t3sbootstrap_media_alignment">
+				<target>Allineamento immagine:</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_t3sbootstrap_media_alignment_top">
+				<target>Immagine allineato in cima</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_t3sbootstrap_media_alignment_middle">
+				<target>Immagine allineato in mezzo</target>
+			</trans-unit>
+			<trans-unit id="tt_content.tx_t3sbootstrap_media_alignment_bottom">
+				<target>Immagine allineato in fondo</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_t3sbootstrap_content_slide">
+				<target>Content slide (cima/fondo della colonna)</target>
+			</trans-unit>
+
+			<trans-unit id="tt_content.tx_t3sbootstrap_image_style">
+				<target>Stile immagine bootstrap</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_t3sbootstrap_fontawesome_icon">
+				<target>Icona Fontawesome (p.es. fa-cog)</target>
+			</trans-unit>
+			<trans-unit id="pages.tx_t3sbootstrap_linkToTop">
+				<target>Link all'inizio della pagina</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>
