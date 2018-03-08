@@ -105,19 +105,32 @@ lib.navigation.main.10{
         IFSUB.wrapItemAndSub = <li class="has-megamenu">|</li>
         IFSUB.ATagParams = 
         IFSUB.linkWrap = 
+        ACT.ATagParams = 
+        ACT.linkWrap = 
+        CUR.linkWrap = 
         ACTIFSUB.wrapItemAndSub = <li class="active has-megamenu">|</li>
+        ACTIFSUB.linkWrap = 
+        CURIFSUB.wrapItemAndSub = <li class="active has-megamenu">|</li>
+        CURIFSUB.linkWrap = 
     }
     2 {
         wrap = <div class="arrow visible-xs visible-sm"><i class="glyphicon glyphicon-chevron-down"></i></div><div class="megamenu-main"><div class="container"><div class="row">|</div></div></div>
+        NO.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
+        
         IFSUB.ATagBeforeWrap = 0
         IFSUB.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
-        NO.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
-        CUR.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
-        ACT.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
         IFSUB.ATagParams = 
         IFSUB.linkWrap.insertData = 1
         IFSUB.linkWrap = | <p>{field:subtitle}</p>
+        
+        CUR.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
+        ACT.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
+        
         ACTIFSUB.wrapItemAndSub =  <div class="col-md-3"><ul><li>|</li></ul></div>
+        ACTIFSUB.linkWrap = | <p>{field:subtitle}</p>
+        
+        CURIFSUB.wrapItemAndSub =  <div class="col-md-3"><ul><li>|</li></ul></div>
+        CURIFSUB.linkWrap = | <p>{field:subtitle}</p>
         stdWrap.append= CONTENT
         stdWrap.append{
             table = pages
