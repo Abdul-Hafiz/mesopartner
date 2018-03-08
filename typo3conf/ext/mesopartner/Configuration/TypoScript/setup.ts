@@ -111,6 +111,9 @@ lib.navigation.main.10{
         wrap = <div class="arrow visible-xs visible-sm"><i class="glyphicon glyphicon-chevron-down"></i></div><div class="megamenu-main"><div class="container"><div class="row">|</div></div></div>
         IFSUB.ATagBeforeWrap = 0
         IFSUB.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
+        NO.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
+        CUR.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
+        ACT.wrapItemAndSub = <div class="col-md-3"><ul><li>|</li></ul></div>
         IFSUB.ATagParams = 
         IFSUB.linkWrap.insertData = 1
         IFSUB.linkWrap = | <p>{field:subtitle}</p>
